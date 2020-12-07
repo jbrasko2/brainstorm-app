@@ -1,11 +1,11 @@
 class IdeasController < ApplicationController
 
   get "/ideas" do
-    erb :"/ideas/index.html"
+    erb :"/ideas/index"
   end
 
   get "/ideas/new" do
-    erb :"/ideas/new.html"
+    erb :"/ideas/new"
   end
 
   post "/ideas" do
@@ -13,11 +13,11 @@ class IdeasController < ApplicationController
   end
 
   get "/ideas/:id" do
-    erb :"/ideas/show.html"
+    erb :"/ideas/show"
   end
 
   get "/ideas/:id/edit" do
-    erb :"/ideas/edit.html"
+    erb :"/ideas/edit"
   end
 
   patch "/ideas/:id" do
