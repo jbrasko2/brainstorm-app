@@ -4,15 +4,48 @@ header {
     text-align: center;
 }
 
+body {
+    padding: 20px;
+    text-align: center;
+}
+
 ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
+li {
+    text-align: center;
+}
+
+textarea {
+    width: 1000px;
+    height: 200px;
+}
+
+.idea_title {
+    font-size: large;
+}
+
 .top_nav_options {
     display: inline-block;
-    margin: 20px;
+    padding: 20px;
+}
+
+.content {
+    text-align: center;
+}
+
+
+#content {
+    width: 1000px;
+    height: 100px;
+    
+}
+
+#edit_link {
+    text-align: center; 
 }
 
 

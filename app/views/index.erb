@@ -1,10 +1,22 @@
-
+<% if logged_in? %>
+    <header>
+        <ul>
+            <li class="top_nav_options"><a href="/ideas/new"> Add a New Idea </a></li>
+            <li class="top_nav_options"><a href="/logout"> Log Out </a></li>
+        </ul>
+    </header>
+<% else %>
+    <header>
+        <p>Please sign in or sign up below:</p>
+        <a href="/signup">Sign Up</a>
+        <br>
+        <br>
+        <a href="/login"> Sign In </a>
+    </header>
+<%end %>
   
 
 
-    
-    <p>Hello, <%=current_user.username %></p>
-    <br>
     
     
 
