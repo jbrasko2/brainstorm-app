@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="/stylesheets/second.css" />
 </head>
 <body>
-    <header>
+    <header> 
+            <% if flash.has?(:message) %>
+                <%= flash[:message] %>
+            <% end %>
         <h1>BrainStorm</h1>
     </header>
     <%= yield %>

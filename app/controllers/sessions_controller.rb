@@ -12,9 +12,11 @@ class SessionsController < ApplicationController
         @user = User.find_by(:username => params[:username])
         if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
+          flash[:message] = "Welcome, #{@user.username}!"
           redirect to '/ideas'
         else
-          redirect to '/signup'
+            flash[:message] = "Username or Password not recognized. Try again or choose 'Sign Up' below."
+            redirect to '/login'
         end
     end
 

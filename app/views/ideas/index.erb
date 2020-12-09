@@ -1,12 +1,12 @@
 <header>
     <ul>
-    <li class="top_nav_options"><a href="/ideas/new">New Idea</a></li>
-    <li class="top_nav_options"><a href="/logout">Log Out</a></li>
+    <li><a href="/ideas/new">New Idea</a></li>
+    <li><a href="/logout">Log Out</a></li>
     <h1>Ideas</h1>
 </header>
 <ul>
 <% @ideas.each do |idea| %>
-    <li class="idea_title"><a href="/ideas/<%= idea.id %>"><%= idea.title %></a></li>
+    <li><a href="/ideas/<%= idea.id %>"><%= idea.title %></a></li>
     <br>
 <% end %>
 </ul>
