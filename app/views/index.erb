@@ -1,17 +1,12 @@
-<nav>
-  <% if logged_in? %>
 
+  
+
+
+    
     <p>Hello, <%=current_user.username %></p>
     <br>
-    <a href="/ideas/new"> Add a New Idea </a>
-    <br>
-    <a href="/logout"> Log Out </a>
+    
     
 
-  <% else %>
-    <p>Please sign in or sign up below:</p>
-    <a href="/signup">Sign Up</a>
-    <a href="/login"> Sign In </a>
-  <%end %>
+  
 
-</nav>

@@ -47,6 +47,7 @@ class IdeasController < ApplicationController
         erb :'ideas/edit'
       else
         redirect to '/ideas'
+      end
     else
       redirect to '/login' 
     end
