@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
       @ideas = current_user.ideas
       erb :'ideas/index'
     else
-      flash[:message] = "Please sign in to view your Ideas."
+      flash[:message] = "Please sign in to view your ideas."
       redirect to '/login'
     end
   end
@@ -14,7 +14,7 @@ class IdeasController < ApplicationController
     if logged_in?
       erb :'ideas/new'
     else
-      flash[:message] = "Please sign in to add a new Idea."
+      flash[:message] = "Please sign in to add a new idea."
       redirect to '/login'
     end
   end

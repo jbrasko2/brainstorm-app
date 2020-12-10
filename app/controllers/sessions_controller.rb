@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         if !logged_in?
             erb :'sessions/login'
         else
-            flash[:message] = "You are logged in as #{current_user.username}."
+            flash[:message] = "You are signed in as #{current_user.username}."
             redirect to '/ideas'
         end
     end
