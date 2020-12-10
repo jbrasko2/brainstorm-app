@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
         if !logged_in?
             erb :'sessions/login'
         else
+            flash[:message] = "You are logged in as #{current_user.username}."
             redirect to '/ideas'
         end
     end
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
           flash[:message] = "Welcome, #{@user.username}!"
           redirect to '/ideas'
         else
-            flash[:message] = "Username or Password not recognized. Try again or choose 'Sign Up' below."
+            flash[:message] = "Username and Password combination not recognized. Try again or choose 'Sign Up' below."
             redirect to '/login'
         end
     end

@@ -11,17 +11,17 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        if params[:username] == "" || params[:password] == ""
-            flash[:message] = "Username and Password fields cannot be blank!"
-            redirect to '/signup'
-        else
-            @user = User.new(username: params[:username], password: params[:password])
-            @user.save
+        @user = User.new(username: params[:username], password: params[:password])
+        if @user.save
             session[:user_id] = @user.id
             flash[:message] = "Welcome to BrainStorm, #{@user.username}!"
             redirect to '/ideas'
+        else
+            flash[:messages] = @user.errors.full_messages
+            redirect to '/signup'
         end
     end
+        
 
     get '/users' do
         @users = User.all

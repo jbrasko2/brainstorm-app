@@ -1,5 +1,3 @@
-
-
 class IdeasController < ApplicationController
 
   get '/ideas' do
@@ -11,27 +9,27 @@ class IdeasController < ApplicationController
     end
   end
 
-  get "/ideas/new" do
+  get '/ideas/new' do
     erb :'ideas/new'
   end
 
-  post "/ideas" do
+  post '/ideas' do
     if logged_in?
-      if params[:title] == "" || params[:content] == ""
-        flash[:message] = "Title and Content fields cannot be blank!"
-        redirect to '/ideas/new'
-      else
-        @idea = current_user.ideas.build(title: params[:title], content: params[:content])
-        @idea.save
-        flash[:message] = "Successfilly added idea!"
+      @idea = current_user.ideas.build(title: params[:title], content: params[:content])
+      if @idea.save
+        flash[:message] = "Successfully added idea!"
         redirect to "/ideas/#{@idea.id}"
+      else
+        flash[:messages] = @idea.errors.full_messages
+        redirect to '/ideas/new'
       end
     else
+      flash = "Please sign in to add an idea."
       redirect to '/login'
     end
   end
 
-  get "/ideas/:id" do
+  get '/ideas/:id' do
     if logged_in?
       @idea = current_user.ideas.find_by_id(params[:id])
       if @idea
@@ -46,22 +44,22 @@ class IdeasController < ApplicationController
     end
   end
 
-  get "/ideas/:id/edit" do
+  get '/ideas/:id/edit' do
     if logged_in?
       @idea = current_user.ideas.find_by_id(params[:id])
       if @idea
         erb :'ideas/edit'
       else
-        flash[:message] = "Idea does not exist!"
+        flash[:message] = "This idea does not belong to you!"
         redirect to '/ideas'
       end
     else
-      flash[:message] = "Please login to edit this idea."
+      flash[:message] = "Please sign in to edit this idea."
       redirect to '/login' 
     end
   end
 
-  patch "/ideas/:id" do
+  patch '/ideas/:id' do
     if logged_in?
       if params[:title] == "" || params[:content] == ""
         redirect to "/ideas/#{params[:id]}/edit"
@@ -77,6 +75,22 @@ class IdeasController < ApplicationController
       end
     else
       flash[:message] = "Please login to edit this idea."
+      redirect to '/login'
+    end
+  end
+
+  patch '/ideas/:id' do
+    if logged_in?
+      @idea = current_user.ideas.find_by_id(params[:id])
+      if @idea.update(title: params[:title], content: params[:content])
+        flash[:message] = "Successfully updated idea!"
+        redirect to "/ideas/#{@idea.id}"
+      else
+        flash[:messages] = @idea.errors.full_messages
+        redirect to "/ideas/#{@idea.id}/edit"
+      end
+    else
+      flash[:message] = "Please sign in to edit this idea."
       redirect to '/login'
     end
   end

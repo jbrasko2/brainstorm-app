@@ -9,9 +9,16 @@
 </head>
 <body>
     <header> 
-            <% if flash.has?(:message) %>
+            <% if flash[:message] %>
                 <%= flash[:message] %>
             <% end %>
+        <ul>
+            <% if flash[:messages] %>
+               <% flash[:messages].each do |message| %>
+                   <li><%= message %></li>
+               <% end %>
+           <% end %>
+        </ul>
         <h1>BrainStorm</h1>
     </header>
     <%= yield %>
