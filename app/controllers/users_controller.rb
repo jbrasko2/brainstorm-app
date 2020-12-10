@@ -4,8 +4,7 @@ class UsersController < ApplicationController
         if !logged_in?
             erb :'users/signup'
         else
-            @user = current_user
-            flash[:message] = "Signed in as #{@user.username}."
+            flash[:message] = "Signed in as #{current_user.username}."
             redirect to '/ideas'
         end
     end
