@@ -23,9 +23,12 @@ body {
 .content-box {
     display: flex;
     max-width: 800px;
-    text-align:center;
     border: 2px solid black;
     margin: auto;
+}
+
+.content-text {
+    padding: 30px;
 }
 
 .center-text {
@@ -43,6 +46,40 @@ input[type="text"] {
     font-family: 'Courier New', Courier, monospace;
 }
 
+input[type="submit"] {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+}
+
+input[type="submit"]:hover {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: white;
+}
+
+input[type="submit"].red-link {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: red;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid red;
+}
+
+input[type="submit"]:hover.red-link {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+    color: red;
+}
+
 a:link, a:visited {
     background-color: white;
     color: black;
@@ -56,6 +93,21 @@ a:link, a:visited {
 a:hover, a:active {
     background-color: black;
     color: white;
+}
+
+a:link.red-link, a:visited.red-link {
+    background-color: red;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid red;
+}
+
+a:hover.red-link, a:active.red-link {
+    background-color: white;
+    color: red;
 }
 
 hr {

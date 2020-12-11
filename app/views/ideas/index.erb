@@ -1,9 +1,12 @@
 <div class="top-nav-options">
-    <a href="/ideas/new">New Idea</a>
+    <h3>Welcome, <%= current_user.username %>.</h3>
+    <br>
+    <a class="red-link" href="/ideas/new">Create New Idea</a>
     <a href="/logout">Log Out</a>
     <br><br><br><br>
     <h1>Ideas</h1>
 </div>
+
 <% if !@ideas.empty? %>
     <div class="iterate">
         <% @ideas.each do |idea| %>
@@ -13,5 +16,5 @@
     </div>
 
 <% else %>
-    <p class="center-text">You currently have no ideas stored. To add a new idea, select 'New Idea' above.</p>
+    <p class="center-text">You currently have no ideas stored. To add a new idea, select 'Create New Idea' above.</p>
 <% end %>

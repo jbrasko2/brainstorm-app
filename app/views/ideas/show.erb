@@ -6,7 +6,7 @@
 </div>
 
 <div class="content-box">
-    <p><%= @idea.content %></p>
+    <p class="content-text"><%= @idea.content %></p>
 </div>
 
 <br><br>
@@ -19,7 +19,7 @@
 
 <form method="post" action="/ideas/<%= @idea.id %>/delete">
     <input id="hidden" type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+    <input type="submit" class="red-link" value="Delete">
 </form>
 
 

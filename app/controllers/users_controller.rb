@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         @user = User.new(username: params[:username], password: params[:password])
         if @user.save
             session[:user_id] = @user.id
-            flash[:message] = "Welcome to BrainStorm, #{@user.username}!"
             redirect to '/ideas'
         else
             flash[:messages] = @user.errors.full_messages
