@@ -4,11 +4,14 @@
     <br><br><br><br>
     <h1>Ideas</h1>
 </div>
+<% if !@ideas.empty? %>
+    <div class="iterate">
+        <% @ideas.each do |idea| %>
+            <a href="/ideas/<%= idea.id %>"><%= idea.title %></a>
+            <br><br>
+        <% end %>
+    </div>
 
-<div class="iterate">
-    <% @ideas.each do |idea| %>
-        <a href="/ideas/<%= idea.id %>"><%= idea.title %></a>
-        <br><br>
-    <% end %>
-</div
-
+<% else %>
+    <p class="center-text">You currently have no ideas stored. To add a new idea, select 'New Idea' above.</p>
+<% end %>

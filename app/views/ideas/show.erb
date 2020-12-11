@@ -1,13 +1,15 @@
 <div class="top-nav-options">
     <a href="/ideas">Ideas</a>
     <a href="/logout">Log Out</a>
-    
+    <br><br><br><br>
+    <h2><%= @idea.title %></h2>
 </div>
 
+<div class="content-box">
+    <p><%= @idea.content %></p>
+</div>
 
-
-<h2><%= @idea.title %></h2>
-<p><%= @idea.content %></p>
+<br><br>
 
 <form action="/ideas/<%= @idea.id %>/edit">
     <input type="submit" value="Edit">
@@ -16,7 +18,7 @@
 <br>
 
 <form method="post" action="/ideas/<%= @idea.id %>/delete">
-    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete">
 </form>
 

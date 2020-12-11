@@ -4,7 +4,7 @@ body {
 
 #main-header {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .top-nav-options {
@@ -18,6 +18,29 @@ body {
 
 .iterate {
     text-align: center;
+}
+
+.content-box {
+    display: flex;
+    max-width: 800px;
+    text-align:center;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.center-text {
+    text-align: center;
+}
+
+textarea {
+    width: 800px;
+    height: 200px;
+    border: 2px solid black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="text"] {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 a:link, a:visited {

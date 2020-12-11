@@ -11,9 +11,11 @@
     <header id="main"> 
         <br>
         <h1 id="main-header">BrainStorm</h1>
+        <br>
+        <hr/>
         <% if flash[:message] %>
-                <p class="flash"><%= flash[:message] %></p>
-            <% end %>
+            <p class="flash"><%= flash[:message] %></p>
+        <% end %>
 
         <% if flash[:messages] %>
             <% flash[:messages].each do |message| %>
@@ -21,7 +23,6 @@
             <% end %>
         <% end %>
         <br>
-        <hr/>
     </header>
     <%= yield %>
 </body>

@@ -45,7 +45,7 @@ class IdeasController < ApplicationController
         redirect to '/ideas'
       end
     else
-      flash[:message] = "Please login to see your ideas."
+      flash[:message] = "Please sign in to see your ideas."
       redirect to '/login'
     end
   end
@@ -56,11 +56,11 @@ class IdeasController < ApplicationController
       if @idea
         erb :'ideas/edit'
       else
-        flash[:message] = "This idea does not belong to you!"
+        flash[:message] = "That idea does not belong to you!"
         redirect to '/ideas'
       end
     else
-      flash[:message] = "Please sign in to edit this idea."
+      flash[:message] = "Please sign in to edit the idea."
       redirect to '/login' 
     end
   end
@@ -76,7 +76,7 @@ class IdeasController < ApplicationController
         redirect to "/ideas/#{@idea.id}/edit"
       end
     else
-      flash[:message] = "Please sign in to edit this idea."
+      flash[:message] = "Please sign in to edit the idea."
       redirect to '/login'
     end
   end
@@ -90,7 +90,7 @@ class IdeasController < ApplicationController
       flash[:message] = "Idea has been deleted!"
       redirect to '/ideas'
     else
-      flash[:message] = "Please sign in to delete this idea."
+      flash[:message] = "Please sign in to delete the idea."
       redirect to '/login'
     end
   end
