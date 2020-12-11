@@ -1,14 +1,14 @@
-<header>
-    <ul>
-    <li><a href="/ideas/new">New Idea</a></li>
-    <li><a href="/logout">Log Out</a></li>
+<div class="top-nav-options">
+    <a href="/ideas/new">New Idea</a>
+    <a href="/logout">Log Out</a>
+    <br><br><br><br>
     <h1>Ideas</h1>
-</header>
-<ul>
-<% @ideas.each do |idea| %>
-    <li><a href="/ideas/<%= idea.id %>"><%= idea.title %></a></li>
-    <br>
-<% end %>
-</ul>
+</div>
 
+<div class="iterate">
+    <% @ideas.each do |idea| %>
+        <a href="/ideas/<%= idea.id %>"><%= idea.title %></a>
+        <br><br>
+    <% end %>
+</div
 

@@ -1,12 +1,9 @@
-<header>
-    <ul>
-        <li><a href="/ideas">Ideas</a></li>
-        <li><a href="/logout">Log Out</a></li>
-    </ul>
+<div class="top-nav-options">
+    <a href="/ideas">Ideas</a>
+    <a href="/logout">Log Out</a>
     <br>
+</div>
     <h1>Edit Idea</h1>
-</header>
-
 <form method="post" action="/ideas/<%= @idea.id %>">
     <input type="hidden" name="_method" value="patch">
 

@@ -1,17 +1,18 @@
 <% if logged_in? %>
-    <div class="homepage_options">
-        <ul>
-            <li><a href="/ideas"> Ideas </a></li>
-            <li><a href="/ideas/new"> Add a New Idea </a></li>
-            <li><a href="/logout"> Log Out </a></li>
-        </ul>
+    <div class="top-nav-options">
+        
+            <a href="/ideas"> Ideas </a>
+            <br>
+            <a href="/ideas/new"> Add a New Idea </a>
+            <br>
+            <a href="/logout"> Log Out </a>
+        
     </div>
 <% else %>
-    <div class="homepage_options">
-        <p>Please sign in or sign up below:</p>
+    <div class="top-nav-options">
+        <p>Please sign up or sign in below:</p>
         <a href="/signup">Sign Up</a>
-        <br>
-        <br>
+        <br><br>
         <a href="/login"> Sign In </a>
     </div>
 <%end %>
