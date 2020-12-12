@@ -5,7 +5,7 @@ Welcome to the BrainStorm Sinatra Application! This app is designed for authors,
 ## Installation
 
 Gems required to successfully run this application can be found in the config/environment folder.
-To install, clone this repo and enter 'bundle install' into the terminal
+To install, clone this repo and enter 'bundle install' into the terminal.
 
 ## Usage
 
