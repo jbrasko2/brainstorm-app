@@ -81,6 +81,11 @@ class IdeasController < ApplicationController
     end
   end
 
+  get '/ideas/:id/delete' do
+    flash[:message] = "Ideas can't be deleted from the URL."
+    redirect to '/'
+  end
+
   delete '/ideas/:id/delete' do
     if logged_in?
       @idea = current_user.ideas.find_by_id(params[:id])
