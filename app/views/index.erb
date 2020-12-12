@@ -1,14 +1,19 @@
 <% if logged_in? %>
     <div class="top-nav-options">
-        
-            <a href="/ideas"> Ideas </a>
-            <br><br>
-            <a class="red-link" href="/ideas/new"> Create New Idea </a>
-            <br><br>
-            <a href="/logout"> Log Out </a>
-        
+        <h3>Welcome, <%= current_user.username %>.</h3>
+        <br>
+        <a href="/ideas"> Ideas </a>
+        <br><br>
+        <a class="red-link" href="/ideas/new"> Create New Idea </a>
+        <br><br>
+        <a href="/logout"> Log Out </a>
     </div>
 <% else %>
+    <div class="top-nav-options">
+        <p>Welcome to BrainStorm! Designed for authors, creators and inventors, BrainStorm will allow you to keep track of all your original ideas!</p>
+        <br>
+    </div>
+
     <div class="top-nav-options">
         <p>Please sign up or sign in below:</p>
         <a href="/signup">Sign Up</a>
