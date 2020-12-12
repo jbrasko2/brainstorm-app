@@ -1,6 +1,6 @@
 # BrainStorm Sinatra App
 
-Welcome to the BrainStorm Sinatra Application! This app is designed for authors, writers and inventors and allows each user to store an idea in a database. Users will be able to create, view, edit and delete their ideas as well as sign in and out of the application.
+Welcome to the BrainStorm Sinatra Application! This app is designed for authors, writers and inventors and allows each user to store an idea in a database using ActiveRecord. Users will be able to create, view, edit and delete their ideas as well as sign in and out of the application.
 
 ## Installation
 
